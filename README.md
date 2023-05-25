@@ -1,5 +1,28 @@
 # Table of Contents
 
+- [the unix system](#the-unix-system)
+- [command structure](#command-structure)
+- [text editors](#text-editors)
+- [navigate directory](#navigate-directory)
+- [create directory](#create-directory)
+- [move file](#move-file)
+- [read file](#read-file)
+- [copy file](#copy-file)
+- [deleting](#deleting)
+- [searching](#searching)
+- [symbolic link](#symbolic-link)
+- [users](#users)
+- [file permissions](#file-permissions)
+- [system information](#system-information)
+- [processes](#processes)
+- [directing input and output](#directing-input-and-output)
+- [bash configuration](#bash-configuration)
+- [zshell configuration](#zshell-configuration)
+- [alias](#alias)
+- [environment variables](#environment-variables)
+
+---
+
 # the unix system
 - unix: the operating system
 - kernel: core of the os which allocates time and memory to processes
@@ -23,7 +46,7 @@
 # text editors
 - text editors in unix include emacs, nano, vim...: `nano` or `nano file.txt`
 
-# navigating directory
+# navigate directory
 - working directory: the current directory you are at
 - see the present working directory `pwd`
 - see the files/folders in the working directory `ls`. options: 
@@ -40,11 +63,11 @@
   - `/usr` unix system resources
   - `/var` variable system data files
 
-# creating directory
+# create directory
 - create in working director `mkdir newfolder`
 - create multiple folders within each other `mkdir -p newfolder/inner/finalfold`
 
-# moving file
+# move file
 - move directory `mv original/location.txt /final`
 - move directory and rename file `mv original/location.txt /final/newname.txt`
 - options are: 
@@ -52,12 +75,12 @@
   - `-n` no overwriting
   - `-i` interactive, making it ask you
 
-# read text files
+# read file
 - concatenate and output text `cat hello.txt` or `cat h1.txt h2.txt`
 - output all at once `more h1.txt`
 - output with scrolling and better viewing `less h1.txt`
 
-# copying
+# copy file
 - copy file from.txt into new.txt `cp from.txt new.txt`
 - copy entire directory and all children `cp -R original orig_backup`
 - options:
@@ -69,14 +92,14 @@
 - delete file permanently `rm file.txt`
 - delete directory `rm -R foldername`
 
+# searching
+- search by file name: `find /location_to_search -name "file.jpg"`
+- use `*` as a wildcard 
+
 # symbolic link
 - an alias for a path
 - breaks if folder/file in path is removed
 - `ln -s original/file path/symlink_name`
-
-# searching
-- search by file name: `find /location_to_search -name "file.jpg"`
-- use `*` as a wildcard 
 
 # users
 - use `sudo` keyword before command to have root permission
@@ -119,7 +142,7 @@
 - `!458` runs command with reference number 458
 - `sudo !!` runs previous command with sudo
 
-# input and output
+# directing input and output
 - `command > file` direct stdout to file
 - `command >> file` appends stdout to end of file
 - `command < file` direct stdin from file
